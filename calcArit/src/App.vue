@@ -57,6 +57,9 @@ export default{
 
 <template>  
 
+<div id="app">
+
+
 <h1>CALCULADORA SIMPLES</h1>
 
 <!-- <div >Selecione: {{ selected }}</div>
@@ -70,7 +73,6 @@ export default{
 
 </select> -->
 
-<div id="app">
 
 <label for="">I</label>
   <input :disabled="controlador" type="number" v-model.number="n1" placeholder="Valor 1">
@@ -78,19 +80,15 @@ export default{
   <input :disabled="controlador" type="number" v-model.number="n2" placeholder="Valor 2">
   <button class="ligar"@click="ativarOperacao()">Ligar</button>
   <button class="limparCampos" @click="limpar()">Apagar</button>
-
-
-  <br> <br>
-
-
+  <label id="instrucao">Passe o mause sobre o operador ! </label> <br>
+  
   <hr> <br>
 
-  <label > Adição </label>
-  <p v-bind:disabled="selecione">{{ somar() }}</p> 
-  <hr> <br>
+  <label > Somar </label>
+<p>{{ somar() }}</p>
+<hr> <br>
 
-
-<label > Subtração </label>
+  <label > Subtração </label>
 <p>{{ subtracao() }}</p>
 <hr> <br>
 
@@ -109,6 +107,7 @@ export default{
 
 <style scoped>
 
+
 input{
   width: 160px;
   height: 30px;
@@ -116,14 +115,19 @@ input{
   text-align: center;
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(238, 232, 225);
+  border-color: blue;
+  
 }
 
 p{
-  color: green;
-  font-size: 22px;
+  color: transparent;
+  font-size: 35px;
   cursor: pointer;
 
+}
+
+p:hover{
+color: black;
 }
 
 .ligar{
@@ -161,6 +165,15 @@ border: none;
 color: rgb(209, 16, 122);
 background-color: rgb(5, 206, 48);
 border: none;
+}
+
+#instrucao{
+color: black;
+font-size: 15px;
+font-family: Arial, Helvetica, sans-serif;
+margin-left: 10px;
+background-color: yellow;
+padding: 10px;
 }
 
 </style> 
